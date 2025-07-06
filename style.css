@@ -43,6 +43,7 @@ h3 { font-size: 1.1rem; font-weight: 600; margin-top: 0; margin-bottom: 1rem; bo
 html.dark h3 { border-color: var(--border-dark); }
 
 .route-info-header { font-size: 0.9rem; color: var(--gray-light); margin-left: 1rem; white-space: nowrap; }
+html.dark .route-info-header { color: var(--gray-dark); }
 .info-block { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; }
 .info-block-icon { font-weight: 600; color: var(--primary-color); flex-shrink: 0; width: 80px; text-align: right; }
 .info-block-title { font-weight: 600; }
