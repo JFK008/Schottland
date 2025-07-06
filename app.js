@@ -4,7 +4,6 @@ const { useEffect, useState } = React;
 
 const createGoogleMapsLink = query => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 
-// KORREKTUR: Hier sind jetzt ALLE Reisedaten von Tag 1 bis 12 enthalten.
 const REISEPLAN_DATEN = [{
   tag: 1,
   titel: "Ankunft & Edinburgh",
@@ -127,8 +126,6 @@ const REISEPLAN_DATEN = [{
   infos: [{ icon: "Brücke", title: "Forth Bridges Viewpoint", gmaps: "Forth Bridges Viewpoint, South Queensferry", web: "https://www.theforthbridges.org/", desc: "Macht einen letzten Stopp, um die drei imposanten Brücken aus drei Jahrhunderten zu bestaunen." }, { icon: "Pause", title: "Letzter Kaffee", gmaps: "Hawes Inn, South Queensferry", web: "https://www.vintageinn.co.uk/restaurants/scotland-northernireland/thehawesinnsouthqueensferry", desc: "Das historische Hawes Inn ist perfekt, um die Reise ausklingen zu lassen." }, { icon: "Camper", title: "Camper-Rückgabe", desc: "Plant genug Zeit ein! Ihr müsst tanken, Wasser ablassen, putzen und auf die Abnahme warten." }]
 }];
 
-// KORREKTUR: Vereinfachte Marker-Logik für bessere Stabilität.
-// Die vorherige Methode mit Nummern im Marker-Namen war nicht standardkonform und hat die Karte zum Absturz gebracht.
 const GesamtroutenKarte = () => {
   const markers = REISEPLAN_DATEN.map(tag => `marker=${tag.zielCoords.lat},${tag.zielCoords.lon}`).join('&');
   const mapSrc = `https://www.openstreetmap.org/export/embed.html?bbox=-8.6,54.6,-0.7,59&layer=mapnik&${markers}`;
